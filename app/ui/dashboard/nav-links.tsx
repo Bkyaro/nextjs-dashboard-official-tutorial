@@ -21,11 +21,9 @@ const links = [
 
 export default function NavLinks() {
 	const pathname = usePathname();
-	console.log("pathname", pathname);
 	return (
 		<>
 			{links.map((link) => {
-				console.log("link", link);
 				const LinkIcon = link.icon;
 				return (
 					<Link

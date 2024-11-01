@@ -60,6 +60,7 @@ export async function fetchCardData() {
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
 
+    // 并行加载，但如果其中给一个请求很慢，则页面会阻塞
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
